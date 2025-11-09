@@ -132,11 +132,11 @@ nav a::after {
   }
 }
 .avatar {
-  width: 140px;
-  height: 140px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid var(--accent);
+  border: 3px solid var(--accent);
 }
 .title {
   font-size: 2.4rem;
