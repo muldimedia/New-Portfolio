@@ -242,10 +242,10 @@ h2::after {
 }
 
 .carousel-track img {
-  flex: 0 0 100%; /* ✅ one image per frame */
+  flex: 0 0 100%;
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* ✅ fits inside box */
+  object-fit: contain;
   display: block;
 }
 
@@ -313,7 +313,7 @@ h2::after {
 :root.dark .footer {
   border-color: #212833;
 }
-/* Reduced motion */
+
 @media (prefers-reduced-motion: reduce) {
   .carousel-track {
     transition: none;
@@ -323,7 +323,6 @@ h2::after {
   }
 }
 
-/* Mobile Menu Styling */
 .mobile-menu-btn {
   display: none;
   background: none;
@@ -334,7 +333,6 @@ h2::after {
   color: var(--text);
 }
 
-/* Mobile */
 @media (max-width: 800px) {
   nav ul {
     position: absolute;
@@ -359,7 +357,6 @@ h2::after {
     display: block;
   }
 
-  /* Hide desktop nav layout spacing */
   nav ul li {
     width: 100%;
   }
