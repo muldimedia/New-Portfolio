@@ -606,26 +606,41 @@
         📥 Download Excel Report
     </button>
 </div>
+<div class="download-container">
+    <input type="password" id="downloadCode" placeholder="Enter download code">
+    
+    <div style="margin-top: 10px;">
+        <button onclick="checkAndDownload('business')" class="download-btn">
+            📥 Download Business Report
+        </button>
+
+        <button onclick="checkAndDownload('food')" class="download-btn">
+            🍎 Download Food Cost Calculator
+        </button>
+    </div>
+</div>
 
 <script>
-function checkCodeAndDownload() {
-    const secretCode = "1512";
-    const inputField = document.getElementById('downloadCode');
-    const userInput = inputField.value;
+function checkAndDownload(fileType) {
+    const secretCode = "1512"; // Your shared password
+    const userInput = document.getElementById('downloadCode').value;
 
     if (userInput === secretCode) {
         const link = document.createElement('a');
-        // Ensure this path matches your folder name exactly!
-        link.href = 'assets/Business_Project_2026.xlsx'; 
-        link.download = 'Business_Project_2026.xlsx';
         
+        if (fileType === 'business') {
+            link.href = 'assets/Business_Project_2026.xlsx';
+            link.download = 'Business_Project_2026.xlsx';
+        } else if (fileType === 'food') {
+            link.href = 'assets/Food_Cost_Calculator.xlsx';
+            link.download = 'Food_Cost_Calculator.xlsx';
+        }
+
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
     } else {
         alert("Incorrect code. Please try again.");
-        inputField.value = ""; // Clears the box for a retry
-        inputField.focus();    // Puts the cursor back in the box
     }
 }
 </script>
