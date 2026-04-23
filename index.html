@@ -599,11 +599,33 @@
       </div>
     </section>
 
-    <a href="assets/Business_Project_2026.xlsx" download="Business_Project_2026.xlsx" class="download-btn">
-
+ <div class="download-container">
+    <input type="password" id="downloadCode" placeholder="Enter download code">
+    <button onclick="checkCodeAndDownload()" class="download-btn">
         📥 Download Excel Report
+    </button>
+</div>
 
-    </a>
+<script>
+function checkCodeAndDownload() {
+    const secretCode = "1512"; // Set your desired code here
+    const userInput = document.getElementById('downloadCode').value;
+
+    if (userInput === secretCode) {
+        // Create a temporary hidden link
+        const link = document.createElement('a');
+        link.href = 'assetes/Business_Project_2026.xlsx';
+        link.download = 'Business_Project_2026.xlsx';
+        
+        // Append to body, click it, and remove it
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    } else {
+        alert("Incorrect code. Please try again.");
+    }
+}
+</script>
 
     <footer class="footer">
       <span>Do Not Sell or Share My Personal Information</span>
